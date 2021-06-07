@@ -19,7 +19,7 @@ body {
 /* Style the buttons that are used to open the tab content */
 
 .completed {
-    border-bottom: 5px solid blue!important;
+    border-bottom: 5px solid rgb(72 115 62)!important;
 }
 
 .completed:hover {
@@ -37,7 +37,7 @@ body {
     padding: 14px 16px;
     transition: 0.3s;
     width: 100%;
-    border-bottom: 5px solid gray;
+    border-bottom: 5px solid rgb(189, 189, 189);
 }
 
 
