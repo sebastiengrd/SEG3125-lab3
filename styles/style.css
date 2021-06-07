@@ -10,12 +10,22 @@ body {
 
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
     background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
 }
 
 
 /* Style the buttons that are used to open the tab content */
+
+.completed {
+    border-bottom: 5px solid blue!important;
+}
+
+.not-completed {
+    border-bottom: 5px solid gray!important;
+    ;
+}
 
 .tab button {
     background-color: inherit;
@@ -25,6 +35,7 @@ body {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    width: 100%;
 }
 
 
@@ -53,6 +64,8 @@ body {
 
 .title-section {
     margin: 0px;
+    color: white;
+    background-color: rgb(72 115 62);
 }
 
 #Products {
