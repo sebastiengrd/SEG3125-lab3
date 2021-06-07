@@ -6,7 +6,8 @@ steps = ["Client", "Products", "Cart"]
 function openInfo(evt, tabName) {
 
     elem = document.getElementById(tabName + "-Top");
-    let previousIdx = steps.indexOf(tabName) - 1;
+    let currentIdx = steps.indexOf(tabName)
+    let previousIdx = currentIdx - 1;
     if (previousIdx < 0) {
         previousIdx = 0;
     }
@@ -14,6 +15,10 @@ function openInfo(evt, tabName) {
     console.log(previous.className);
     if (previous.className.indexOf("completed") < 0) {
         return;
+    }
+
+    if (currentIdx == 1) {
+        populateListProductChoices('dietSelect', 'displayProduct')
     }
     showTabLink(tabName);
 
