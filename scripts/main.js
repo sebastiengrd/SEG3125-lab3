@@ -1,8 +1,26 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
+steps = ["Client", "Products", "Cart"]
+
 function openInfo(evt, tabName) {
 
+    elem = document.getElementById(tabName + "-Top");
+    let previousIdx = steps.indexOf(tabName) - 1;
+    if (previousIdx < 0) {
+        previousIdx = 0;
+    }
+    previous = document.getElementById(steps[previousIdx] + "-Top")
+    console.log(previous.className);
+    if (previous.className.indexOf("completed") < 0) {
+        return;
+    }
+    showTabLink(tabName);
+
+}
+
+function showTabLink(tabName) {
+    elem = document.getElementById(tabName + "-Top");
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -17,8 +35,9 @@ function openInfo(evt, tabName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-
+    elem.className += " active";
+    console.log(elem.innerHTML);
+    elem.className += (" completed");
 }
 
 
@@ -108,3 +127,6 @@ function checkboxPreferOrganicChanged(event) {
     populateListProductChoices("dietSelect", 'displayProduct')
 
 }
+
+
+showTabLink('Client')

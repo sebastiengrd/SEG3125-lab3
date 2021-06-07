@@ -24,9 +24,9 @@
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <button class="tablinks completed" onclick="openInfo(event, 'Client')">Client</button>
-        <button class="tablinks not-completed" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks not-completed" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button class="tablinks completed" id="Client-Top" onclick="openInfo(event, 'Client')">1 - Client</button>
+        <button class="tablinks" id="Products-Top" onclick="openInfo(event, 'Products')">2 - Products</button>
+        <button class="tablinks" id="Cart-Top" onclick="openInfo(event, 'Cart')">3 - Cart</button>
     </div>
 
     <!-- Tab content -->
@@ -35,15 +35,17 @@
         <p>Tell us a bit about you.</p>
         Choose a Category:
         <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-                <option value=""></option>
+                <option value="None">None</option>
                 <option value="Vegetarian">Vegetarian</option>
                 <option value="GlutenFree">GlutenFree</option>
                 <option value="NutFree">NutFree</option>Free</option>
                 <option value="LactoseFree">LactoseFree</option>
-                <option value="None">None</option>
             </select>
         <br>
         <p>Only show organic products <input type="checkbox" onchange="checkboxPreferOrganicChanged(event)"></p>
+        <button id="addCart" type="button" class="block" onclick="openInfo(null, 'Products')">
+            See Available Products
+        </button>
     </div>
 
     <div id="Products" class="tabcontent">
