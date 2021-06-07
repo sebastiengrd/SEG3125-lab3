@@ -100,7 +100,7 @@
 	// given restrictions provided, make a reduced list of products
 	// prices should be included in this list, as well as a sort based on price
 
-	function restrictListProducts(prods, restriction, onlyOrganic) {
+	function restrictListProducts(prods, onlyOrganic) {
 	    let product_names = [];
 
 	    for (let i = 0; i < prods.length; i += 1) {
@@ -108,17 +108,17 @@
 	            continue
 	        }
 
-	        if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)) {
-	            product_names.push(prods[i].name);
-	        } else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)) {
-	            product_names.push(prods[i].name);
-	        } else if ((restriction == "NutFree") && (prods[i].nutFree == true)) {
-	            product_names.push(prods[i].name);
-	        } else if ((restriction == "LactoseFree") && (prods[i].lactoseFree == true)) {
-	            product_names.push(prods[i].name);
-	        } else if (restriction == "None") {
-	            product_names.push(prods[i].name);
+	        if ((restrictions.Vegetarian == true) && (prods[i].vegetarian == false)) {
+	            continue;
+	        } else if ((restrictions.GlutenFree == true) && (prods[i].glutenFree == false)) {
+	            continue;
+	        } else if ((restrictions.NutFree == true) && (prods[i].nutFree == false)) {
+	            continue;
+	        } else if ((restrictions.LactoseFree == true) && (prods[i].lactoseFree == false)) {
+	            continue;
 	        }
+
+	        product_names.push(prods[i].name);
 	    }
 
 

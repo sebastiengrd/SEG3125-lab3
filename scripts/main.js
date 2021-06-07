@@ -24,7 +24,7 @@ function openInfo(evt, tabName) {
     }
 
     if (currentIdx == 1) {
-        populateListProductChoices('dietSelect', 'displayProduct')
+        populateListProductChoices('displayProduct')
     }
     showTabLink(tabName);
 
@@ -43,7 +43,7 @@ function showTabLink(tabName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-
+    console.log(tabName);
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "flex";
     elem.className += " active";
@@ -56,8 +56,7 @@ function showTabLink(tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(slct2) {
     var s2 = document.getElementById(slct2);
     let preferOrganic = document.preferOrganic;
     if (preferOrganic == undefined) { preferOrganic = false; }
@@ -66,7 +65,7 @@ function populateListProductChoices(slct1, slct2) {
     s2.innerHTML = "";
 
     // obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value, preferOrganic);
+    var optionArray = restrictListProducts(products, preferOrganic);
 
     optionArray.sort((a, b) => products.filter(elem => elem.name == a)[0].price - products.filter(elem => elem.name == b)[0].price)
 
@@ -135,7 +134,7 @@ function selectedItems() {
 
 function checkboxPreferOrganicChanged(event) {
     document.preferOrganic = event.target.checked;
-    populateListProductChoices("dietSelect", 'displayProduct')
+    populateListProductChoices('displayProduct')
 
 }
 
@@ -151,7 +150,7 @@ function clientInfoButtonClicked(id) {
         restrictions[restrictionName] = true;
 
     } else {
-        button.className = button.className.replace("categories-button-selected", "");
+        button.className = button.className.replace(" categories-button-selected", "");
         restrictions[restrictionName] = false;
     }
 }
