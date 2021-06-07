@@ -80,9 +80,10 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #eee;
+    background-color: rgb(72 115 62);
 }
 
 .footer p {
+    color: white;
     margin: 10px;
 }
