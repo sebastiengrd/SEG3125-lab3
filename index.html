@@ -35,7 +35,6 @@
             <h3>Client Information</h3>
             <p>Tell us a bit about you.</p>
             Choose a Category:
-
             <div id="categories-container">
                 <div class="categories-button" id="button-Vegetarian" onclick="clientInfoButtonClicked(this.id)">Vegetarian</div>
                 <div class="categories-button" id="button-GlutenFree" onclick="clientInfoButtonClicked(this.id)">Gluten Intolerant</div>
@@ -52,18 +51,21 @@
     </div>
 
     <div id="Products" class="tabcontent">
-        <h3>Your targeted products</h3>
-        <p>We preselected products based on your restrictions.</p>
-        <p>Choose items to buy:</p>
-        <br>
-        <div id="displayProduct"></div>
-        <br>
-        <button id="addCart" type="button" class="block" onclick="selectedItems()">
-                Add selected items to cart.
-            </button>
-        <br>
-        <br>
-        <br>
+        <div>
+
+            <h3>Your targeted products</h3>
+            <p>We preselected products based on your restrictions.</p>
+            <p>Choose items to buy:</p>
+            <br>
+            <div id="displayProduct"></div>
+            <br>
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                    Add selected items to cart.
+                </button>
+            <br>
+            <br>
+            <br>
+        </div>
     </div>
 
     <div id="Cart" class="tabcontent">
