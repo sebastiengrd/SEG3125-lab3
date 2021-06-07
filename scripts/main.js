@@ -2,6 +2,12 @@
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
 steps = ["Client", "Products", "Cart"]
+restrictions = {
+    "Vegetarian": false,
+    "GlutenFree": false,
+    "NutFree": false,
+    "LactoseFree": false
+}
 
 function openInfo(evt, tabName) {
 
@@ -39,7 +45,7 @@ function showTabLink(tabName) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).style.display = "flex";
     elem.className += " active";
     console.log(elem.innerHTML);
     elem.className += (" completed");
@@ -131,6 +137,23 @@ function checkboxPreferOrganicChanged(event) {
     document.preferOrganic = event.target.checked;
     populateListProductChoices("dietSelect", 'displayProduct')
 
+}
+
+function clientInfoButtonClicked(id) {
+    //console.log("clicked " + id.substring(7));
+
+    button = document.getElementById(id);
+
+    let restrictionName = id.substring(7);
+
+    if (button.className.indexOf(" categories-button-selected") < 0) {
+        button.className += " categories-button-selected";
+        restrictions[restrictionName] = true;
+
+    } else {
+        button.className = button.className.replace("categories-button-selected", "");
+        restrictions[restrictionName] = false;
+    }
 }
 
 

@@ -47,14 +47,36 @@ body {
     background-color: #ccc;
 }
 
+#categories-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.categories-button {
+    text-align: center;
+    background-color: rgb(72 115 62);
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1em;
+}
+
+.categories-button:hover {
+    background-color: rgb(95, 151, 82);
+}
+
+.categories-button-selected {
+    border: 3px solid black;
+}
+
 
 /* Style the tab content */
 
 .tabcontent {
-    display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
+    justify-content: center;
 }
 
 .title-section {
